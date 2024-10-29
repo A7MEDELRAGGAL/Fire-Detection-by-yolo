@@ -1,11 +1,6 @@
-# Fire-Detection-by-yolo
-YOLOv8-based fire detection project for real-time fire alerts and monitoring. Utilizes a custom-trained model for detecting fire in video feeds or images, making it suitable for safety and monitoring applications.
-
-
-
 <h1 align="center"><span>YOLOv8 for Fire Detection</span></h1>
 
-Fire detection task aims to identify fire or flame in a video and put a bounding box around it. This repo includes a demo on how to build a fire detector using YOLOv8. 
+YOLOv8-based fire detection project for real-time fire alerts and monitoring. Utilizes a custom-trained model for detecting fire in video feeds or images, making it suitable for safety and monitoring applications.
 
 <p align="center">
   <img src="runs/detect/RPReplay_Final1730157467.gif" />
