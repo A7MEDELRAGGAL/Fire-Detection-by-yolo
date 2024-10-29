@@ -83,6 +83,12 @@ The fire detection results were fairly good even though the model was trained on
 | ![](tests/IMG/img2.jpg) | ![](runs/detect/img/img2.jpg) |
 
 
+#Fire Detection project by Ahmed Moahmmed Saad El-Raggal
+#Email: Ahmedxd444@gmail.com
+#Linkedin: [Linkedin](https://www.linkedin.com/in/ira3/)
+#Github: [Github](https://github.com/A7MEDELRAGGAL)
+
+
 ## 🔗 Reference
 * https://github.com/ultralytics/ultralytics
 * https://universe.roboflow.com/-jwzpw/continuous_fire/dataset/6
