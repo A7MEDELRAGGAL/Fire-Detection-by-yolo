@@ -11,8 +11,8 @@ Fire detection task aims to identify fire or flame in a video and put a bounding
   <img src="runs/detect/RPReplay_Final1730157467.gif" />
 </p>
 
-## 🛠️ Installation
-1. Clone this repo 
+## First
+1. Installing the packages
 ``` shell
 # Installing the packages
 !pip install ultralytics
@@ -21,50 +21,50 @@ Fire detection task aims to identify fire or flame in a video and put a bounding
 !pip install roboflow
 ```
 
-2. Install [YOLOv5](https://github.com/ultralytics/yolov5). 
+2. Import YOLO model utilities from Ultralytics and Roboflow for model use, and Image for displaying images in Jupyter
 ``` shell
-git clone https://github.com/ultralytics/yolov5.git 
-cd yolov5
-pip install -r requirements.txt
+from roboflow import Roboflow
+from ultralytics import YOLO
+from IPython.display import Image
 ```
 
-3. Or install [YOLOv9](https://github.com/WongKinYiu/yolov9.git)
+3. Connect to Roboflow with API key, access the "continuous_fire" project, and download version 6 of the dataset for YOLOv8
 ``` shell
 git clone https://github.com/WongKinYiu/yolov9.git
 cd yolov9
 pip install -r requirements.txt
 ```
 
-## 🏋️ Training
-I set up ```train.ipynb``` script for training the model from scratch. To train the model, download [Fire-Dataset](https://www.kaggle.com/datasets/atulyakumar98/fire-and-gun-dataset) and put it in ```datasets``` folder. I filtered out images and annotations that contain fire and guns as well as images with low resolution, and then changed fire annotation's label in annotation files.
-
-- YOLOv5
-```
-python train.py --img 640 --batch 16 --epochs 10 --data ../fire.yaml --weights yolov5s.pt --workers 0
-```
-
-- YOLOv9
-```
-python train_dual.py --workers 4 --device 0 --batch 16 --data ../fire.yaml --img 640 --cfg models/detect/yolov9-c.yaml --weights '' --name yolov9-c --hyp hyp.scratch-high.yaml --min-items 0 --epochs 50 --close-mosaic 15
-```
-
-## 🌱 Inference
-
-- YOLOv5
-  
-If you train your own model, use the following command for detection:
+## Connect to Roboflow with API key, access the "continuous_fire" project, and download version 6 of the dataset for YOLOv8
 ``` shell
-python detect.py --source ../input.mp4 --weights runs/train/exp/weights/best.pt --conf 0.2
-```
-Or you can use the pretrained model located in ```models``` folder for detection as follows:
-``` shell
-python detect.py --source ../input.mp4 --weights ../models/yolov5s_best.pt --conf 0.2
+from roboflow import Roboflow
+rf = Roboflow(api_key="Hm8mdFJnlkZnoorR3Uy8")
+project = rf.workspace("-jwzpw").project("continuous_fire")
+dataset = project.version(6).download("yolov8")
 ```
 
-- YOLOv9
+- Train YOLOv8 model for fire detection with specified parameters (image size, epochs, batch size, and model name)
+```
+!yolo task=detect mode=train model=yolov8n.pt data=/content/continuous_fire-6/data.yaml imgsz=640 epochs=10 batch=10 name=fire_detection_model
+```
+
+- Validate the trained YOLOv8 model for fire detection using the best weights and specified dataset
+```
+!yolo task=detect mode=val model=/content/runs/detect/fire_detection_model/weights/best.pt data=/content/continuous_fire-6/data.yaml
+```
+
+## predict
+
+- Predict from your computer camera
+``` shell
+#model.predict(source=0, save=True,conf=0.5,show=True)
+```
+
+
+- Predict from your computer source
 
 ``` shell
-python detect.py --weights runs/train/yolov9-c2/weights/best.pt --source ../input.mp4
+model.predict(source=r'WhatsApp.mp4', save=False, conf=0.5, show=True)    /Replace WhatsApp.mp4 with the path of your file
 ```
 
 You can download the pretrained yolov9-c.pt model from [google drive](https://drive.google.com/file/d/1nV5C3dbc_Q3CoczHaERTojr78-SFPdMI/view?usp=sharing) for fire detection. Note that this model was trained on the fire dataset for 50 epochs. Refer to [link](https://github.com/WongKinYiu/yolov9/issues/162) to fix for detect.py runtime error when running yolov9.
