@@ -3,7 +3,7 @@ YOLOv8-based fire detection project for real-time fire alerts and monitoring. Ut
 
 
 
-<h1 align="center"><span>YOLOv5/YOLOv8 for Fire Detection</span></h1>
+<h1 align="center"><span>YOLOv8 for Fire Detection</span></h1>
 
 Fire detection task aims to identify fire or flame in a video and put a bounding box around it. This repo includes a demo on how to build a fire detector using YOLOv8. 
 
