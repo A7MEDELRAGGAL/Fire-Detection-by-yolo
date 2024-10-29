@@ -84,7 +84,7 @@ The fire detection results were fairly good even though the model was trained on
 #Output: [vids](runs/detect/vid)
 
 
-#Fire Detection project by Ahmed Moahmmed Saad El-Raggal
+#Fire Detection project by Ahmed Mohammed Saad El-Raggal
 #Email: Ahmedxd444@gmail.com
 #Linkedin: [Linkedin](https://www.linkedin.com/in/ira3/)
 #Github: [Github](https://github.com/A7MEDELRAGGAL)
