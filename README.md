@@ -50,7 +50,7 @@ dataset = project.version(6).download("yolov8")
 
 - Predict from your computer camera
 ``` shell
-#model.predict(source=0, save=True,conf=0.5,show=True)
+model.predict(source=0, save=True,conf=0.5,show=True)
 ```
 
 
@@ -82,7 +82,7 @@ The fire detection results were fairly good even though the model was trained on
 | :-: | :-: |
 | ![](tests/IMG/img2.jpg) | ![](runs/detect/img/img2.jpg) |
 
+
 ## 🔗 Reference
-* 
-* https://github.com/ultralytics/yolov8
-*
+* https://github.com/ultralytics/ultralytics
+* https://universe.roboflow.com/-jwzpw/continuous_fire/dataset/6
