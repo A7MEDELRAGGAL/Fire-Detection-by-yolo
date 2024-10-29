@@ -80,8 +80,8 @@ The fire detection results were fairly good even though the model was trained on
 #Input: [imgs](tests/IMG)
 #Output: [imgs](runs/detect/img)
 
-#Input: [imgs](tests/VID)
-#Output: [imgs](runs/detect/vid)
+#Input: [vids](tests/VID)
+#Output: [vids](runs/detect/vid)
 
 
 #Fire Detection project by Ahmed Moahmmed Saad El-Raggal
