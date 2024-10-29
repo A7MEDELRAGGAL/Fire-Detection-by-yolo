@@ -77,6 +77,12 @@ The fire detection results were fairly good even though the model was trained on
 | :-: | :-: |
 | ![](tests/IMG/img2.jpg) | ![](runs/detect/img/img2.jpg) |
 
+#Input: [imgs](tests/IMG)
+#Output: [imgs](runs/detect/img)
+
+#Input: [imgs](tests/VID)
+#Output: [imgs](runs/detect/vid)
+
 
 #Fire Detection project by Ahmed Moahmmed Saad El-Raggal
 #Email: Ahmedxd444@gmail.com
